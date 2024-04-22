@@ -78,7 +78,8 @@ for (i in 0:4) {
   
   cor_all[[i+1]] = corrs
   
-  testn = list(RNASeq = c(25, 50, 100), 
+  testn = list(RNASeq = c(25, 50, 100),
+               metabolomics = c(25, 50, 100),
                fluxomics = c(25, 50, 100))
   
   tune_feats = tune.block.splsda(X = train_data, Y = Y_train, ncomp = 2, 
@@ -201,37 +202,37 @@ write.csv(all_loads_dna[[1]],
 all_train_errors[[1]]
 
 
-# ------------------------------------------ USE DATA SPLIT 2 (3�) -------------------------------------
+# ------------------------------------------ USE DATA SPLIT 2 (third) -------------------------------------
 
-Xtrain_dna_name = paste0(c('XTRAIN_RNASEQ_ALL_GENES_NOREPS_SPLIT_'), 4, '.csv')
+Xtrain_dna_name = paste0(c('XTRAIN_RNASEQ_ALL_GENES_NOREPS_SPLIT_'), 2, '.csv')
 Xtrain_dna = read.csv(Xtrain_dna_name, header = TRUE, sep = ",", row.names=1)
 dim(Xtrain_dna)
 
-Xtest_dna_name = paste0(c('XTEST_RNASEQ_ALL_GENES_NOREPS_SPLIT_'), 4, '.csv')
+Xtest_dna_name = paste0(c('XTEST_RNASEQ_ALL_GENES_NOREPS_SPLIT_'), 2, '.csv')
 Xtest_dna = read.csv(Xtest_dna_name, header = TRUE, sep = ",", row.names=1)
 dim(Xtest_dna)
 
-Xtrain_met_name = paste0(c('XTRAIN_METABOLOMICS_NOREPS_VT_SPLIT_'), 4, '.csv')
+Xtrain_met_name = paste0(c('XTRAIN_METABOLOMICS_NOREPS_VT_SPLIT_'), 2, '.csv')
 Xtrain_met = read.csv(Xtrain_met_name, header = TRUE, sep = ",", row.names=1)
 dim(Xtrain_met)
 
-Xtest_met_name = paste0(c('XTEST_METABOLOMICS_NOREPS_VT_SPLIT_'), 4, '.csv')
+Xtest_met_name = paste0(c('XTEST_METABOLOMICS_NOREPS_VT_SPLIT_'), 2, '.csv')
 Xtest_met = read.csv(Xtest_met_name, header = TRUE, sep = ",", row.names=1)
 dim(Xtest_met)
 
-Xtrain_flux_name = paste0(c('XTRAIN_FLUXOMICS_REACTIONS_SPLIT_'), 4, '.csv')
+Xtrain_flux_name = paste0(c('XTRAIN_FLUXOMICS_REACTIONS_SPLIT_'), 2, '.csv')
 Xtrain_flux = read.csv(Xtrain_flux_name, header = TRUE, sep = ",", row.names=1)
 dim(Xtrain_flux)
 
-Xtest_flux_name = paste0(c('XTEST_FLUXOMICS_REACTIONS_SPLIT_'), 4, '.csv')
+Xtest_flux_name = paste0(c('XTEST_FLUXOMICS_REACTIONS_SPLIT_'), 2, '.csv')
 Xtest_flux = read.csv(Xtest_flux_name, header = TRUE, sep = ",", row.names=1)
 dim(Xtest_flux)
 
-ytrain_name = paste0(c('yTRAIN_ALL_GENES_NOREPS_SPLIT_'), 4, '.csv')
+ytrain_name = paste0(c('yTRAIN_ALL_GENES_NOREPS_SPLIT_'), 2, '.csv')
 ytrain = read.csv(ytrain_name, header = TRUE, sep = ",", row.names=1)
 dim(ytrain)
 
-ytest_name = paste0(c('yTEST_ALL_500_GENES_NOREPS_SPLIT_'), 4, '.csv')
+ytest_name = paste0(c('yTEST_ALL_500_GENES_NOREPS_SPLIT_'), 2, '.csv')
 ytest = read.csv(ytest_name, header = TRUE, sep = ",", row.names=1)
 dim(ytest)
 
